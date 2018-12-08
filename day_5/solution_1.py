@@ -12,29 +12,31 @@ while removed:
     for i,_ in enumerate(chars):
         if i < len(chars) - 1:
             if abs(ord(chars[i]) - ord(chars[i+1])) == 32:
-                chars.pop(i)
-                chars.pop(i)
+                a = chars.pop(i)
+                b = chars.pop(i)
+                print("Removed: " + a + b)
                 removed = True
                 break
 
 '''
 
 i = 0
-slow = True
 #print(chars)
 while i < len(chars) - 1:
     #print(str(chars[i]) + " - " +  str(chars[i+1]) +  " = " + str(abs(ord(chars[i]) - ord(chars[i+1]))))
+    #print(chars[-10:])
 
     if abs(ord(chars[i]) - ord(chars[i+1])) == 32:
         #print(chars.pop(i))
         #print(chars.pop(i))
-        chars.pop(i)
-        chars.pop(i)
-        i -= 1
+        a = chars.pop(i)
+        b = chars.pop(i)
+        #print("Removed: " + a + b)
+        if i != 0:
+            i -= 1
         #print(chars)
     else:
         i += 1
-
 
 
 
