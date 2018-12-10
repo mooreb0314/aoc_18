@@ -1,6 +1,12 @@
 from shutil import copyfile
 import sys, os
 
+# Example: python3 .\new_day.py day_2
+
+if len(sys.argv) != 2:
+    raise Exception("You must provide one argument.\nExample: python3 .\\new_day.py day_2")
+
+# Create the directory
 try:
     os.mkdir(sys.argv[1])
 except FileExistsError:
