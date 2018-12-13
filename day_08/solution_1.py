@@ -11,7 +11,7 @@ metadata = []
 nodes = []
 total = 0
 for d in license_file:
-    print("Switch: " + switch + " item: " + str(d))
+
     if switch == "h":
         # At header, getting num child nodes
         if len(nodes) > 0:
@@ -41,21 +41,11 @@ for d in license_file:
                 nodes[-1] -= 1
             # Else, there are no more nodes, and we have to see if we are at more meta data (0 in previous index) more header( >0 in previous index)
             else:
-
                 # Remove last node and look to see if we are at a header
                 nodes.pop()
-                if len(nodes) > 0:
+                if len(nodes) > 0 and nodes[-1] > 0:
                     # If we are here, we must be at another header
-                    if nodes[-1] > 0:
-                        switch = 'h'
-                    # Else, this means we can process more metadata
-                    else:
-                        switch = 'm' # shouldn't actually change anything can be removed
+                    switch = 'h'
 
-
-
-
-    print("Metadata Array: " + str(metadata))
-    print("Nodes Array: " + str(nodes))
 
 print(total)
